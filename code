@@ -1,0 +1,18 @@
+import re # importing the libraries of specifying a set of strings that matches it
+
+
+
+my_str = "Hello, i'm someone. I want to you will write me on my email addresses. My first is checkandmate@gmail.com . My second email is dogcat@gmail.com . Me thirth email is sunnydaytoday@yahoo.com" # text
+emails = re.findall("([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)", my_str) # scans string from left to right. Searching  non-alphanumeric/underscore somewhere in the input
+
+
+user_name = [] # slicing the email into the USER name
+domains_name = [] # slicing the email into the domain name
+
+for email in emails: # start of function
+    user_name.append(email[:email.index("@")]) # user name before email.@
+    domains_name.append(email[email.index("@")+1:]) # domains name after @ / IT is '+1'
+
+
+
+print(f"Your usernames are {user_name} and your domain name is {domains_name}") # showing the result
